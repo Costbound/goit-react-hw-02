@@ -1,0 +1,11 @@
+:root {
+    font-family: sans-serif;
+    padding: 16px;
+    letter-spacing: 0.02em;
+}
+img {
+    display: block;
+}
+button {
+    display: block;
+}

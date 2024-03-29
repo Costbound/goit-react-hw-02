@@ -44,9 +44,9 @@ export default function App() {
 
     return (
         <div className="content-container">
-            <Description />
-            <Option updateFeedback={ updateFeedback } total={totalFeedbacks} />
-            {totalFeedbacks > 0 ? <Feedback feedbacks={feedbacks} total={totalFeedbacks} goodRate={goodRate} /> : <Notification />}
+                <Description />
+                <Option updateFeedback={updateFeedback} total={totalFeedbacks} />
+                {totalFeedbacks > 0 ? <Feedback feedbacks={feedbacks} total={totalFeedbacks} goodRate={goodRate} /> : <Notification />}
         </div>
     )
 }
