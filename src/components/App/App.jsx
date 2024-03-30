@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.module.css'
 import Description from '../Description/Description'
 import Feedback from '../Feedback/Feedback'
-import Option from '../Option/Option'
+import Options from '../Options/Options'
 import Notification from '../Notification/Notification'
 
 export default function App() {
@@ -21,20 +21,22 @@ export default function App() {
 
     const {good, neutral, bad} = feedbacks
     const totalFeedbacks = good + neutral + bad
-    const goodRate = Math.round((good / totalFeedbacks) * 100)
+    const goodRate = totalFeedbacks > 0 ? Math.round((good / totalFeedbacks) * 100) : 0
 
     const updateFeedback = (type) => {
+
         if (type === "reset") {
             setFeedbacks({
                 good: 0,
                 neutral: 0,
                 bad: 0
             })
+            console.log ("1111")
             return
         }
         setFeedbacks({
-            [type]: feedbacks[type]++,
-            ...feedbacks
+            ...feedbacks,
+            [type]: feedbacks[type] + 1,
         })
     }
 
@@ -45,7 +47,7 @@ export default function App() {
     return (
         <div className="content-container">
                 <Description />
-                <Option updateFeedback={updateFeedback} total={totalFeedbacks} />
+                <Options updateFeedback={updateFeedback} total={totalFeedbacks} />
                 {totalFeedbacks > 0 ? <Feedback feedbacks={feedbacks} total={totalFeedbacks} goodRate={goodRate} /> : <Notification />}
         </div>
     )

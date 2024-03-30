@@ -1,4 +1,4 @@
-import css from './Option.module.css'
+import css from './Options.module.css'
 
 export default function Option({updateFeedback, total}) {
     return (
