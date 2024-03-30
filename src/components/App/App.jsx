@@ -31,7 +31,6 @@ export default function App() {
                 neutral: 0,
                 bad: 0
             })
-            console.log ("1111")
             return
         }
         setFeedbacks({
